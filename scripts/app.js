@@ -16,7 +16,7 @@ var app = angular.module('app', [])
     $scope.save = function () {
         if ($scope.name && $scope.time) {
             $scope.todos.push(
-                { name: $scope.name, time: $scope.time, stt: 'Complete' }
+                { name: $scope.name, time: $scope.time, stt: 'Uncomplete' }
                 );
         }
     }
