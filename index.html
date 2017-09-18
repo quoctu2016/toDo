@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>My web</title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/app.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body ng-controller="myCtrl">
+    <div id="container">
+        <div id="form-info">
+            <fieldset>
+                <legend>
+                    add to do
+                </legend>
+                Name: <input id="txtname" type="text" ng-model="name" /><br /><br />   
+                Time: 
+                <select ng-model="time">
+                    <option value="{{time}}" ng-repeat="time in times">{{time}}</option>
+                </select>
+                <br /><br />
+                <input id="Button1" type="button" value="Save" ng-click="save()" /><br /><br />
+            </fieldset>
+        </div>
+        <div id="show-info">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="todo in todos" class="{{todo.nameClass}}">
+                        <td>{{todo.name}}</td>
+                        <td>{{todo.time}}</td>
+                        <td><input id="Button1" type="button" value="Delete" ng-click="delete($index)" />   <input id="Checkbox1" type="checkbox" ng-click="complete($index)" /> <span>{{todo.stt}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
